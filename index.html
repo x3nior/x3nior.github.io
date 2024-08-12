@@ -1,9 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</head>
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">METRIC CONVERSION</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Objectives</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Converstion
+                </a>
+                <ul class="dropdown-menu">
+                  
+                  <li><a class="dropdown-item" href="area.html">AREA</a></li>
+                  <li><a class="dropdown-item" href="lenght.html">LENGTH</a></li>
+                  <li><a class="dropdown-item" href="volume.html">VOLUME</a></li>
+                  <li><a class="dropdown-item" href="Mass.html">MASS</a></li>
+                  <li><a class="dropdown-item" href="Temperature.html">TEMPERATURE</a></li>
+                  <li><a class="dropdown-item" href="Currency.html">CURRENCY</a></li>
+                </ul>
+              </li>
+            </ul>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+          </div>
+        </div>
+      </nav>
+      <div class="parent2">
+        <div class="content">
+          <h2><b><u><i>WELCOME TO METRIC CONVERSION</b></u></i></h2>
+          <p><b><i>The metric system is a system of measurement that is a decimal system. The current international
+             standard for the metric system is the International System of Units (Système international
+              d'unités or SI) and Metric Conversion refers to the conversion of the given units to desired
+               units for any quantity to be measured. The different unit of measurement resulted in the 
+               introduction of the "Metric System". The metric units followed in the United States are called
+              United States Customary Units (USCS).</i></b></p>
+        <video src="johnny-test-converting.mp4"
+        loop="true" autoplay="true" width="800" height="560"> </video>
+      </div>
+      <style>
+        *{
+  box-sizing:border-box;
+}
 
+body{
+  margin:0;
+}
+
+.parent1{
+  width:100%;
+  height:100vh;
+  background-image:url('//picsum.photos/1920/1080');
+  background-size: 50% 100%;
+  background-position: right;
+  background-repeat:no-repeat;
+  margin-bottom: 20px;
+}
+
+.child1{
+  width:50%;
+  padding:20px;
+}
+
+
+.parent2{
+  font-size:larger ;
+  width:100%;
+  height:100vh;
+  display:flex;
+  align-items:stretch;
+}
+
+.parent2 > .content,
+.parent2 > img{
+  width:50%;
+}
+
+.parent2 > .content{
+  padding:20px;
+}
+      </style>
+    
 </body>
 </html>
