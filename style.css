@@ -1,121 +1,114 @@
-$borderRadius: 10px;
-$spacer: 1rem;
-$primary: #406ff3;
-$text: #6a778e;
-$linkHeight: $spacer * 3.5;
-$timing: 250ms;
-$transition: $timing ease all;
-
-@mixin gooeyEffect($i) {
-  @keyframes gooeyEffect-#{$i} {
-    0% {
-      transform: scale(1, 1);
-    }
-    50% {
-      transform: scale(0.5, 1.5);
-    }
-    100% {
-      transform: scale(1, 1);
-    }
-  }
-}
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
-body{
-  background: #eaeef6;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
 }
-.navbar{
-  $ref: &;
-  position: fixed;
-  top: $spacer;
-  left: $spacer;
+.footer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1280px;
+  width: 95%;
+  background: #10182F;
+  border-radius: 6px;
+}
+.footer .footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3.5rem;
+  padding: 60px;
+}
+.footer-row .footer-col h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.footer-col .links {
+  margin-top: 20px;
+}
+.footer-col .links li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.footer-col .links li a {
+  text-decoration: none;
+  color: #bfbfbf;
+}
+.footer-col .links li a:hover {
+  color: #fff;
+}
+.footer-col p {
+  margin: 20px 0;
+  color: #bfbfbf;
+  max-width: 300px;
+}
+.footer-col form {
+  display: flex;
+  gap: 5px;
+}
+.footer-col input {
+  height: 40px;
+  border-radius: 6px;
+  background: none;
+  width: 100%;
+  outline: none;
+  border: 1px solid #7489C6 ;
+  caret-color: #fff;
+  color: #fff;
+  padding-left: 10px;
+}
+.footer-col input::placeholder {
+  color: #ccc;
+}
+ .footer-col form button {
   background: #fff;
-  border-radius: $borderRadius;
-  padding: $spacer 0;
-  box-shadow: 0 0 40px rgba(0,0,0,0.03);
-  height: calc(100vh - #{$spacer*4});
-  &__link{
-    position:relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: $linkHeight;
-    width: $spacer * 5.5;
-    color: $text;
-    transition: $transition;
-    span{
-      position: absolute;
-      left: 100%;
-      transform: translate(-($spacer*3));
-      margin-left: 1rem;
-      opacity: 0;
-      pointer-events: none;
-      color: $primary;
-      background: #fff;
-      padding: $spacer *0.75;
-      transition: $transition;
-      border-radius: $borderRadius * 1.75;
-    }
-    &:hover{
-      color: #fff;
-    }
-    .navbar:not(:hover) &:focus,
-    &:hover{
-      span{
-        opacity: 1;
-        transform: translate(0);
-      }
-    }
-  }
-  &__menu{
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+.footer-col form button:hover {
+  background: #cecccc;
+}
+.footer-col .icons {
+  display: flex;
+  margin-top: 30px;
+  gap: 30px;
+  cursor: pointer;
+}
+.footer-col .icons i {
+  color: #afb6c7;
+}
+.footer-col .icons i:hover  {
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .footer {
     position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    border-radius: 0;
   }
-  &__item{
-    &:last-child{
-      &:before{
-        content: '';
-        position: absolute;
-        opacity: 0;
-        z-index: -1;
-        top: 0;
-        left: $spacer;
-        width: $linkHeight;
-        height: $linkHeight;
-        background: $primary;
-        border-radius: $borderRadius * 1.75;
-        transition: $timing cubic-bezier(1, 0.2, 0.1, 1.2) all;
-        
-      }
-    }
-    
-    @for $i from 1 to 12 {
-      &:first-child:nth-last-child(#{$i}),
-      &:first-child:nth-last-child(#{$i}) ~ li {
-        &:hover {
-          ~ li:last-child:before {
-            opacity: 1;
-          }
-        }
-        &:last-child:hover:before {
-          opacity: 1;
-        }
-        @for $j from 1 to $i {
-          &:nth-child(#{$j}):hover, {
-            ~ li:last-child:before {
-              @include gooeyEffect($j);
-              top: (100% / $i) * ($j - 1);
-              animation: gooeyEffect-#{$j} $timing 1;
-            }
-          }
-        }
-        &:last-child:hover:before, {
-          @include gooeyEffect($i);
-          top: (100% / $i) * ($i - 1);
-          animation: gooeyEffect-#{$i} $timing 1;
-        }
-      }
-    }
-
+  .footer .footer-row {
+    padding: 20px;
+    gap: 1rem;
   }
-  
+  .footer-col form {
+    display: block;
+  }
+  .footer-col form :where(input, button) {
+    width: 100%;
+  }
+  .footer-col form button {
+    margin: 10px 0 0 0;
+  }
 }
